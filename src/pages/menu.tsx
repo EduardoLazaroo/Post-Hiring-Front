@@ -1,6 +1,8 @@
 import '../stylesInterface/menu.css'
 import imgMenu from '../assets/menu.png';
 import imgClose from '../assets/close.png';
+import { IoMdMenu } from "react-icons/io";
+import { IoIosCloseCircleOutline } from "react-icons/io";
 
 export function Menu() {
     return (
@@ -20,9 +22,8 @@ export function Menu() {
                             </ul>
                         </div>{/* menu acaba */}
 
-                        <div className='toggle icon-menu'><img src={imgMenu} /></div>
-                        <div className='toggle icon-close'><img src={imgClose} /></div>
-                        
+                        <div className='toggle icon-menu'><IoMdMenu style={{color: 'white', height: 32, width: 32, cursor: "pointer"}}/></div>
+                        {/* <div className='toggle icon-close'><IoIosCloseCircleOutline style={{color: 'white', height: 32, width: 32, cursor: "pointer", visibility: "hidden"}}/> </div> */}
                     </nav>
                 </header>
             </section>

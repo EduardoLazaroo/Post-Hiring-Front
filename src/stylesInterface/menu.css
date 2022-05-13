@@ -99,7 +99,8 @@ section.menu nav.show .icon-close img{
     visibility: visible;
 }
 
-section.menu nav .icon-menu img{
+section.menu IoMdMenu{
+    color: white;
     height: 30px;
     cursor: pointer;
 }

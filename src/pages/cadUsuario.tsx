@@ -1,11 +1,9 @@
-import Menu from './menu';
 import '../styles/cadUsuario.css'
 
 export function CadUsuario() {
     return (
         <>
             <body>
-                <Menu></Menu>
                 <section className='cadUsuario'>
                     <div className="area-usuario">
                         <div className="divUsuario">

@@ -45,7 +45,14 @@ section.editDocument form input{
 }
 
 /* descricao */
-section.editDocument form input.descricao{
+section.editDocument textarea.descricao{
+    color: white;
+    background-color: rgba(45, 42, 42, 0.752);
+    margin-top: 11px;
+    padding-left: 15px;
+    padding-top: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
     height: 12rem;
 }
 

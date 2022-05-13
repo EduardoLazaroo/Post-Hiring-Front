@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap');
 
-section.cadDocument .area-document{
+section.cadSetor .area-setor{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,31 +9,31 @@ section.cadDocument .area-document{
     font-family: "poppins";
 }
 
-section.cadDocument .divDocument{
+section.cadSetor .divSetor{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 400px;
-    height: 450px;
+    height: 420px;
     background-color: #424348;
     border-radius: 8px;
     padding: 35px;
     border: 1px solid black;
 }
 
-section.cadDocument form{
+section.cadSetor form{
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-section.cadDocument .divDocument h1{
+section.cadSetor .divSetor h1{
     color: white;
     font-size: 24px;
     margin-bottom: 10px;
 }
 
-section.cadDocument form input{
+section.cadSetor form input{
     color: white;
     background-color: rgba(45, 42, 42, 0.752);
     margin-top: 11px;
@@ -44,7 +44,7 @@ section.cadDocument form input{
 }
 
 /* descricao */
-section.cadDocument textarea.descricao{
+section.cadSetor textarea.descricao{
     color: white;
     background-color: rgba(45, 42, 42, 0.752);
     margin-top: 11px;
@@ -55,7 +55,7 @@ section.cadDocument textarea.descricao{
     height: 12rem;
 }
 
-section.cadDocument .divDocument a.button{
+section.cadSetor .divSetor a.button{
     margin-top: 20px;
     display: inline-flex;
     justify-content: center;
@@ -70,6 +70,6 @@ section.cadDocument .divDocument a.button{
     transition: 0.5s;
 }
 
-section.cadDocument .divDocument a.button:hover{
+section.cadSetor .divSetor a.button:hover{
     background-color: rgb(21, 21, 72);
 }

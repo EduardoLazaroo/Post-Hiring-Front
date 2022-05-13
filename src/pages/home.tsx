@@ -1,19 +1,22 @@
 import '../stylesInterface/home.css'
-import Menu from './menu';
 
 export function Home() {
     return (
         <>
             <body>
-                <Menu></Menu>
                 <section className='home'>
                     <div>
                         <form action="">
                             <ul>
                                 <li><a href="perfil">Perfil</a></li>
+                                <div className="divider2"></div>
                                 <li><a href="cadUsuario">Cad Usuario</a></li>
+                                <div className="divider"></div>
                                 <li><a href="cadDocument">Cad Documento</a></li>
                                 <li><a href="editDocument">Edit Document</a></li>
+                                <div className="divider2"></div>
+                                <li><a href="cadsetor">CadSetor</a></li>
+                                <li><a href="editsetor">EditSetor</a></li>
                             </ul> 
                         </form>
                     </div>

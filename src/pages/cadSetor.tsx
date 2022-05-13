@@ -1,18 +1,17 @@
-import '../styles/cadDocument.css'
+import '../styles/cadSetor.css'
 
-export function CadDocument() {
+export function CadSetor() {
     return (
         <>
             <body>
-                <section className='cadDocument'>
-                    <div className="area-document">
-                        <div className="divDocument">
+                <section className='cadSetor'>
+                    <div className="area-setor">
+                        <div className="divSetor">
                             <h1>Cadastro Documento</h1>
                             <form action="">
                                 <input type="text" name='stor' placeholder='Insira o setor'/>
-                                <input type="text" name='material' placeholder='Link do Material'/>
                                 <textarea name="descricao" className='descricao' placeholder='Insira a descricao'></textarea>
-                                </form>
+                            </form>
                             <a className='button' href="#">Cadastrar</a>
                         </div>
                     </div>
@@ -21,5 +20,3 @@ export function CadDocument() {
         </>
     )
 }
-
-export default CadDocument;
