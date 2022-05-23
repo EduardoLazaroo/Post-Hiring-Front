@@ -55,7 +55,7 @@ section.cadSetor textarea.descricao{
     height: 12rem;
 }
 
-section.cadSetor .divSetor a.button{
+section.cadSetor .divSetor input.button{
     margin-top: 20px;
     display: inline-flex;
     justify-content: center;
@@ -70,6 +70,6 @@ section.cadSetor .divSetor a.button{
     transition: 0.5s;
 }
 
-section.cadSetor .divSetor a.button:hover{
+section.cadSetor .divSetor input.button:hover{
     background-color: rgb(21, 21, 72);
 }

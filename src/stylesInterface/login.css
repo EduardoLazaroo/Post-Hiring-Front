@@ -55,7 +55,7 @@ section.container input::placeholder{
 }
 
 /* form */
-section.container a.button{
+section.container input.button{
     margin-top: 8px;
     background-color: rgb(8, 24, 113);
     color:white;
@@ -70,7 +70,7 @@ section.container a.button{
     transition: 0.2s;
 }
 
-section.container a.button:hover{
+section.container input.button:hover{
     background-color: rgb(15, 27, 75);
 }
 

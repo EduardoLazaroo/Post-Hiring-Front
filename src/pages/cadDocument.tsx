@@ -1,6 +1,17 @@
+import { useState } from 'react';
 import '../styles/cadDocument.css'
 
 export function CadDocument() {
+    const cadDocSubmit = (event: { preventDefault: () => void; }) =>{
+        event.preventDefault()
+        console.log('docSetor: '+docSetor)
+        console.log('docMaterial: '+docMaterial)
+        console.log('docDescricao '+ docDescricao)
+    }
+    const [docSetor, setdocSetor] = useState('') 
+    const [docMaterial, setdocMaterial] = useState('') 
+    const [docDescricao, setdocDescricao] = useState('')
+
     return (
         <>
             <body>
@@ -8,12 +19,12 @@ export function CadDocument() {
                     <div className="area-document">
                         <div className="divDocument">
                             <h1>Cadastro Documento</h1>
-                            <form action="">
-                                <input type="text" name='stor' placeholder='Insira o setor'/>
-                                <input type="text" name='material' placeholder='Link do Material'/>
-                                <textarea name="descricao" className='descricao' placeholder='Insira a descricao'></textarea>
+                            <form onSubmit={cadDocSubmit}>
+                                <input type="text" name='setor' id='setor' placeholder='Insira o setor' onChange={(event) => setdocSetor(event.target.value)} />
+                                <input type="text" name='material' id='material' placeholder='Link do Material' onChange={(event) => setdocMaterial(event.target.value)}/>
+                                <textarea name="descricao" className='descricao' id='descricao'  placeholder='Insira a descricao' onChange={(event) => setdocDescricao(event.target.value)} ></textarea>
+                                <input type="submit" className='button' value="Cadastrar" />
                                 </form>
-                            <a className='button' href="#">Cadastrar</a>
                         </div>
                     </div>
                 </section>

@@ -55,7 +55,7 @@ section.cadDocument textarea.descricao{
     height: 12rem;
 }
 
-section.cadDocument .divDocument a.button{
+section.cadDocument .divDocument input.button{
     margin-top: 20px;
     display: inline-flex;
     justify-content: center;
@@ -70,6 +70,6 @@ section.cadDocument .divDocument a.button{
     transition: 0.5s;
 }
 
-section.cadDocument .divDocument a.button:hover{
+section.cadDocument .divDocument input.button:hover{
     background-color: rgb(21, 21, 72);
 }

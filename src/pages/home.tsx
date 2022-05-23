@@ -24,7 +24,7 @@ export function Home() {
                         <h1>Titulo do Setor de trabalho</h1>
                         <img src="https://images.unsplash.com/photo-1652207168425-33b5bb4c14b2?ixlib
                         =rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto
-                        =format&fit=crop&w=500&q=60" alt="moÇa" />
+                        =format&fit=crop&w=500&q=60" alt="moça" />
                         <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Totam saepe, obcaecati excepturi quisquam, aperiam itaque 
