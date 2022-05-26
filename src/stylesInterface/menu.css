@@ -1,116 +1,78 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap');
 
-section.menu #header{
+
+/* //////////////////////*/
+.upper-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(41, 40, 61);
+    margin-bottom: 1px solid black;
+    position: fixed;
     width: 100%;
-    z-index: 3;
-    background: rgb(41, 40, 61);
-    border-bottom: 1px solid rgb(0, 0, 0);
+    height: 10vh;
 }
 
-section.menu a{
-    margin: 0px 10px;
+.upper-nav div.logo{
+    color: white;
+    font: 500 23px "DM Sans";
+}
+
+.upper-nav div.logo strong{
+    color: rgb(32, 32, 212);
+}
+
+.upper-nav div.logo, i{
+    padding: 30px;
+}
+
+
+.hidden, .shown{
+    width: 20vw;
+    height: 100vh;
+
+    display: flex;
+    background: rgb(41, 40, 61);
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.hidden{
+    margin-left: -100% !important;
+    transition: ease-in 0.5s;
+    position: fixed;
+}
+
+.shown{
+    transition: ease-out 0.5s;
+    position: fixed;
+    
+    justify-content: center;
+}
+
+aside.shown ul{
+    margin-top: 28px; 
+}
+
+aside.shown ul li{
+    margin-top: 28px;
+    list-style-type: none;
+}
+
+
+aside.shown ul li a{
+    font: 400 20px "DM Sans";
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 
-section.menu ul{
-    list-style: none;
-}
+@media only screen and (max-width: 530px) {
+    aside.shown ul li a{
+        font: 400 15px "DM Sans";
+    }
+  }
 
-/* navigation */
-section.menu nav{
-    height: 72px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-section.menu ul li{
-    text-align: center;
-}
-
-section.menu ul li a{
-    color: rgb(8, 8, 57);
-    font: 700 30px "Poppins";
-    transition: .3s;
-    position: relative;
-}
-
-section.menu ul li a:hover{
-    color: rgb(62, 62, 93);
-}
-
-section.menu ul li a::after{
-    content: "";
-    width: 0%;
-    height: 2px;
-    background: rgb(62, 62, 93);
-
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    transition: width 0.4s;
-}
-
-section.menu ul li a:hover::after{
-    width: 100%;
-}
-
-section.menu nav .divMenu{
-    opacity: 0;
-    visibility: hidden;
-}
-
-/* show */
-section.menu nav.show .divMenu{
-    opacity: 1;
-    visibility: visible;
-
-    background-color: rgb(185, 182, 182);
-    height: 100vh;
-    width: 100vw;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    display: grid;
-    place-content: center;
-}
-
-/* grid show*/
-section.menu nav.show ul{
-    display: grid;
-    gap: 3rem;
-}
-
-/* toggle menu */
-section.menu nav .icon-close img{
-    height: 30px;
-    visibility: hidden;
-    opacity: 0;
-
-    position: absolute;
-    right: 1.5rem;
-    cursor: pointer;
-}
-
-section.menu nav.show .icon-close img{
-    opacity: 1;
-    visibility: visible;
-}
-
-section.menu IoMdMenu{
-    color: white;
-    height: 30px;
-    cursor: pointer;
-}
-
-/* logo */
-section.menu .name{
-    font: 700 20px "Poppins";
-    color: rgb(225, 225, 225);
-}
-
-section.menu strong {
-    color: rgb(66, 135, 194);
-}
+@media only screen and (max-width: 420px) {
+    aside.shown ul li a{
+        font: 100 11px "DM Sans";
+    }
+  }

@@ -1,13 +1,10 @@
-import React, { useState, useContext, useReducer } from "react";
-import { AuthContext } from "./auth"
-
 import { 
     BrowserRouter as Router,
     Routes,
     Route,
     Outlet,
     Navigate
-  } from "react-router-dom";
+} from "react-router-dom";
 
 import { Login } from "./pages/login";
 import { Home } from "./pages/home";
@@ -20,35 +17,21 @@ import { CadSetor } from "./pages/cadSetor"
 import { EditSetor } from "./pages/editSetor"
 
 export function AppRoutes() {
-    const [ user, setUser ] = useState(null) 
-
-    const login = (email: string, password: string) => { 
-        console.log('login auth ', { email, password })
-        // setUser({ id: "123", email})
-    }
-
-    const logout = () => {
-        console.log('logout')
-       
-    }
-
     return(
         <Router>
-            <AuthContext.Provider value={{authenticated: !!user, login, logout}}> {/* falta o user na segunda camada */}
                 <Routes>
-                    <Route element={ <Login/> } path="/"/>
+                    <Route path="*" element={ <Login/> }/>
                     <Route element={<> <Menu/> <Outlet/> </>}>
-                        <Route element={ <Home/> } path="/home"/>
-                        <Route element={ <Menu/> } path="/menu"/>
-                        <Route element={ <Perfil/> } path="/perfil"/>
-                        <Route element={ <CadUsuario/> } path="/cadUsuario"/>
-                        <Route element={ <CadDocument/> } path="/CadDocument"/>
-                        <Route element={ <EditDocument/> } path="/EditDocument"/>
-                        <Route element={ <CadSetor/> } path="/CadSetor"/>
-                        <Route element={ <EditSetor/> } path="/EditSetor"/>
+                        <Route path="/home" element={ <Home/> }/>
+                        <Route path="/menu" element={ <Menu/> }/>
+                        <Route path="/perfil" element={ <Perfil/> }/>
+                        <Route path="/cadUsuario" element={ <CadUsuario/> }/>
+                        <Route path="/CadDocument" element={ <CadDocument/> }/>
+                        <Route path="/EditDocument" element={ <EditDocument/> }/>
+                        <Route path="/CadSetor" element={ <CadSetor/> }/>
+                        <Route path="/EditSetor" element={ <EditSetor/> }/>
                     </Route>
                 </Routes>
-            </AuthContext.Provider>
         </Router>
     )
 }

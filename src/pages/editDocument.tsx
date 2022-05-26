@@ -8,12 +8,22 @@ export function EditDocument() {
                     <div className="area-document">
                         <div className="divDocument">
                             <h1>Edição de Documento</h1>
-                            <form action="">
-                                <input type="text" name='setor' placeholder='Edite o setor'/>
-                                <input type="text" name='material' placeholder='Link do Material'/>
-                                <textarea name="descricao" className='descricao' placeholder='Insira a descricao'></textarea>
+                            <form >
+                                <input 
+                                type="text" 
+                                name='setor' 
+                                />
+                                <input 
+                                type="text" 
+                                name='material' 
+                                />
+                                <textarea 
+                                name="descricao" 
+                                className='descricao'
+                                >
+                                </textarea>
+                                <input type="submit" className='button' value="Editar" />
                             </form>
-                            <a className='button' href="#">Editar</a>
                         </div>
                     </div>
                 </section>

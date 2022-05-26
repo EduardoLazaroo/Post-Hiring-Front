@@ -5,21 +5,6 @@ export function Home() {
         <>
             <body>
                 <section className='home'>
-                    <div>
-                        <form action="">
-                            <ul>
-                                <li><a href="perfil">Perfil</a></li>
-                                <div className="divider2"></div>
-                                <li><a href="cadUsuario">Cad Usuario</a></li>
-                                <div className="divider"></div>
-                                <li><a href="cadDocument">Cad Documento</a></li>
-                                <li><a href="editDocument">Edit Document</a></li>
-                                <div className="divider2"></div>
-                                <li><a href="cadsetor">CadSetor</a></li>
-                                <li><a href="editsetor">EditSetor</a></li>
-                            </ul> 
-                        </form>
-                    </div>
                     <div className='div'>
                         <h1>Titulo do Setor de trabalho</h1>
                         <img src="https://images.unsplash.com/photo-1652207168425-33b5bb4c14b2?ixlib

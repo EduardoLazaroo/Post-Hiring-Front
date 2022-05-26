@@ -1,32 +1,32 @@
 import '../stylesInterface/menu.css'
-import imgMenu from '../assets/menu.png';
-import imgClose from '../assets/close.png';
+import { useState } from 'react';
 import { IoMdMenu } from "react-icons/io";
-import { IoIosCloseCircleOutline } from "react-icons/io";
 
 export function Menu() {
+
+    const[active, setActive] = useState(false)
     return (
         <>
-            <section className='menu'>
-                <header id='header'>
-                    <nav className='container'>
-                        <a className="name" href="/home">Post<strong>Hiring</strong>.</a>
-                        <div className='divMenu'>
-                            <ul>
-                                <li><a href="home">Home</a></li>
-                                <li><a href="perfil">Perfil</a></li>
-                                <li><a href="cadUsuario">Cad Usuario</a></li>
-                                <li><a href="cadDocument">Cad Documento</a></li>
-                                <li><a href="cadSetor">Cad Setor</a></li>
-                                <li><a href="editSetor">Edit Setor</a></li>
-                            </ul>
-                        </div>{/* menu acaba */}
-
-                        <div className='toggle icon-menu'><IoMdMenu style={{color: 'white', height: 32, width: 32, cursor: "pointer"}}/></div>
-                        {/* <div className='toggle icon-close'><IoIosCloseCircleOutline style={{color: 'white', height: 32, width: 32, cursor: "pointer", visibility: "hidden"}}/> </div> */}
-                    </nav>
-                </header>
-            </section>
+            <nav className="upper-nav">
+                <div className='logo'>Post<strong>Hiring</strong>.</div>
+                <i>
+                    <button onClick={() => setActive(!active)}>
+                    <div className='toggle icon-menu'><IoMdMenu style={{ height: 30, width: 30, cursor: "pointer", borderRadius: 10}}/></div>
+                    </button>
+                </i>
+            </nav>
+            <aside className={`${active ? "hidden" : "shown"}`}>
+                <ul>
+                    <li><a href="home">Home</a></li>
+                    <li><a href="perfil">Perfil</a></li>
+                    <li><a href="cadUsuario">Cadastro Usuario</a></li>
+                    <li><a href="cadDocument">Cadastro Documento</a></li>
+                    <li><a href="cadSetor">Cadastro Setor</a></li>
+                    {/* ----------- */}
+                    <li><a href="editdocument">edtdoc</a></li>
+                    <li><a href="editsetor">edtsetor</a></li>
+                </ul>
+            </aside>
         </>
     )
 }

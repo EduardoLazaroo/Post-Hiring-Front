@@ -5,7 +5,7 @@ section.cadUsuario .area-usuario{
     justify-content: center;
     align-items: center;
     background-color: rgb(234, 234, 234);
-    height: 92vh;
+    height: 100vh;
     font-family: "poppins";
 }
 
@@ -43,7 +43,7 @@ section.cadUsuario form input{
     border: 1px solid black;
 }
 
-section.cadUsuario .divUsuario a.button{
+section.cadUsuario .divUsuario input.button{
     margin-top: 15px;
     display: inline-flex;
     justify-content: center;
@@ -58,6 +58,6 @@ section.cadUsuario .divUsuario a.button{
     transition: 0.5s;
 }
 
-section.cadUsuario .divUsuario a.button:hover{
+section.cadUsuario .divUsuario input.button:hover{
     background-color: rgb(21, 21, 72);
 }

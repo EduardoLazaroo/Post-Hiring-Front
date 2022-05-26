@@ -7,6 +7,7 @@ export function CadSetor() {
     console.log("cadSetor: " + cadSetor);
     console.log("cadDescricao " + cadDescricao);
   };
+  
   const [cadSetor, setcadSetor] = useState("");
   const [cadDescricao, setcadDescricao] = useState("");
 
@@ -29,10 +30,10 @@ export function CadSetor() {
                   name="descricao"
                   id="descricao"
                   className="descricao"
-                  placeholder="Insira a descricao"
+                  placeholder="Insira a descricao do cadastro de setor"
                   onChange={(event) => setcadDescricao(event.target.value)}
-                ></textarea>
-                <input type="submit" className="button" value="Editar" />
+                />
+                <input type="submit" className="button" value="Cadastrar" />
               </form>
             </div>
           </div>

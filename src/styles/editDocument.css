@@ -5,7 +5,7 @@ section.editDocument .area-document{
     justify-content: center;
     align-items: center;
     background-color: rgb(234, 234, 234);
-    height: 92vh;
+    height: 100vh;
     font-family: "poppins";
 }
 
@@ -57,7 +57,7 @@ section.editDocument textarea.descricao{
 }
 
 
-section.editDocument .divDocument a.button{
+section.editDocument .divDocument input.button{
     margin-top: 20px;
     display: inline-flex;
     justify-content: center;
@@ -72,6 +72,7 @@ section.editDocument .divDocument a.button{
     transition: 0.5s;
 }
 
-section.editDocument .divDocument a.button:hover{
+section.editDocument .divDocument input.button:hover{
     background-color: rgb(21, 21, 72);
+    cursor: pointer;
 }

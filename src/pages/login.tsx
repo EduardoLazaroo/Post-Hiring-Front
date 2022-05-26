@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 // import AuthContextInterface from '../auth';
 import { Routes } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 import loginImg from '../assets/login.png';
 import '../stylesInterface/login.css'
@@ -12,8 +13,11 @@ export function Login() {
         event.preventDefault()
         console.log('Email: '+email+ ' senha: '+password)
         // login(email, password) //integração
+        navigate("/home")
     }
 
+    const navigate = useNavigate();
+    
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
