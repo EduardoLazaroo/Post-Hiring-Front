@@ -7,13 +7,6 @@
     
 }
 
-section.home img{
-    max-height: 400px;
-    width: 100%;
-    max-width: 266px;
-    margin: 2rem 0;
-}
-
 section.home{
     background-color: rgb(234, 234, 234);
 
@@ -21,6 +14,13 @@ section.home{
     height: 100%;
     
     padding: 3rem;
+}
+
+section.home img{
+    max-height: 400px;
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem 0;
 }
 
 
@@ -64,11 +64,13 @@ section.home p{
 }
 
 section.home .divider{
+    margin: 3rem 0;
     height: 3px;
     background: linear-gradient(45deg, rgb(147, 197, 221), rgb(6, 3, 65));
 }
 
-section.home .divider2{
+section.home .divider-2{
+    margin: 3rem 0;
     height: 3px;
     background: linear-gradient(45deg, rgb(6, 3, 65), rgb(147, 197, 221));
 }

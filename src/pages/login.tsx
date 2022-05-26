@@ -1,38 +1,65 @@
-import React, { useState, useContext } from 'react';
-// import AuthContextInterface from '../auth';
-import { Routes } from 'react-router-dom';
+import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+// import api from "../services/api.js"
+// import api from "../services/auth.js"
+
 
 import loginImg from '../assets/login.png';
 import '../stylesInterface/login.css'
 
 export function Login() {
-    // const { authenticated, login } = useContext(AuthContext)
+    // const navigate = useNavigate();
 
-    const loginSubmit = (event: { preventDefault: () => void; }) =>{
-        event.preventDefault()
-        console.log('Email: '+email+ ' senha: '+password)
-        // login(email, password) //integração
-        navigate("/home")
-    }
-
-    const navigate = useNavigate();
+    // const [usuario, setUsuario] = React.useState("");
+    // const [senha, setSenha] = React.useState("");
     
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
 
+    // async function authenticateUser(email, password) {
+        
+    //     const user = {
+    //         "email": email,
+    //         "senha": password
+    //     }
+        
+    //     return api.post('usuarios/login', user)
+    //     .then((res)=>{
+    //         if(!res.data.erro) {
+    //             localStorage.setItem('token', res.data.token)
+    //             return res.data;  
+    //         } else {
+    //             console.log('err', res);
+    //         }});
+    //     }
+    // }
+    // const res = await userAPI.authenticateUser(email, password);
+    
     return (
         <>
             <section className="container">
                 <div className="area-login">
                     <div className="login">
                         <div>
-                            <img className='login-img' src={loginImg}/>
+                            <img className='login-img' src={loginImg}
+                            />
                         </div>
-                        <form onSubmit={loginSubmit}>
-                            <input type="email" name='email' id='email' placeholder='Insira seu email' value={email} onChange={(event) => setEmail(event.target.value)}/>
-                            <input type="password" name="password" id='password' placeholder="Insira sua senha" value={password} onChange={(event) => setPassword(event.target.value)}/>
-                            <input type="submit" className='button' value="Entrar" />
+                        <form method='POST'>
+                            <input 
+                                type="text" 
+                                placeholder='Insira seu usuario' 
+                                // onChange={(event) => setUsuario(event.target.value)}
+                            />
+                            <input 
+                                type="password" 
+                                name="password" 
+                                placeholder="Insira sua senha" 
+                                // onChange={(event) => setSenha(event.target.value)}
+                            />
+                            <input 
+                                type="submit" 
+                                className='button' 
+                                value="Entrar" 
+                                // onClick={loginRequest}
+                            />
                         </form>
                     </div>
                 </div>
@@ -42,7 +69,3 @@ export function Login() {
 }
 
 export default Login;
-
-function AuthContext(AuthContext: any): { authenticated: any; login: any; } {
-    throw new Error('Function not implemented.');
-}
