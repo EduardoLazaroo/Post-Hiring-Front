@@ -1,27 +1,24 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
 import api from "../services/request.js"
-
 // import api from "../services/auth.js"
+import { useNavigate } from "react-router-dom";
 
-
+// --------- css ------------
 import loginImg from '../assets/login.png';
 import '../stylesInterface/login.css'
+// --------- css ------------
 
 export function Login() {
     const navigate = useNavigate();
 
     const [usuario, setUsuario] = React.useState("");
     const [senha, setSenha] = React.useState("");
-    
 
     async function authenticateUser() {
-        
-
         const res = await api.login(usuario, senha);
-        console.log('resp', res)
+        console.log('res', res)
     }
-    
+
     return (
         <>
             <section className="container">
@@ -31,7 +28,8 @@ export function Login() {
                             <img className='login-img' src={loginImg}
                             />
                         </div>
-                        <form method='POST'>
+                        {/* ------- form -------- */}
+                        <form>
                             <input 
                                 type="text" 
                                 placeholder='Insira seu usuario' 
@@ -51,11 +49,11 @@ export function Login() {
                                 onClick={()=>authenticateUser()}
                             >Entrar</button>
                         </form>
+                        {/* ------- form -------- */}
                     </div>
                 </div>
             </section>
         </>
     )
 }
-
 export default Login;

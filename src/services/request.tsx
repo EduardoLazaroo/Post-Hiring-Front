@@ -6,7 +6,7 @@ async function login(usuario: string, senha: string) {
         "nickname" : usuario,
         "password" : senha
     }
-
+    
     return api.post('user', user).then(
         (res)=>{
             console.log('1', res);
@@ -17,7 +17,6 @@ async function login(usuario: string, senha: string) {
                 console.log('err', res);
             }});
 }
-
 
 async function logout() {
     try {
