@@ -7,7 +7,7 @@ async function login(usuario: string, senha: string) {
         "password" : senha
     }
     
-    return api.post('user', user).then(
+    return api.post('login/Auth', user).then(
         (res)=>{
             console.log('1', res);
             if(!res.data.erro) {

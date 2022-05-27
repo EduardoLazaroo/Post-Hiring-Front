@@ -1,3 +1,4 @@
+import React from "react";
 import { 
     BrowserRouter as Router,
     Routes,
@@ -18,20 +19,22 @@ import { EditSetor } from "./pages/editSetor"
 
 export function AppRoutes() {
     return(
-        <Router>
-                <Routes>
-                    <Route path="*" element={ <Login/> }/>
-                    <Route element={<> <Menu/> <Outlet/> </>}>
-                        <Route path="/home" element={ <Home/> }/>
-                        <Route path="/menu" element={ <Menu/> }/>
-                        <Route path="/perfil" element={ <Perfil/> }/>
-                        <Route path="/cadUsuario" element={ <CadUsuario/> }/>
-                        <Route path="/CadDocument" element={ <CadDocument/> }/>
-                        <Route path="/EditDocument" element={ <EditDocument/> }/>
-                        <Route path="/CadSetor" element={ <CadSetor/> }/>
-                        <Route path="/EditSetor" element={ <EditSetor/> }/>
-                    </Route>
-                </Routes>
-        </Router>
+        <>
+            <Router>
+                    <Routes>
+                        <Route path="*" element={ <Login/> }/>
+                        <Route element={<> <Menu/> <Outlet/> </>}>
+                            <Route path="/home" element={ <Home/> }/>
+                            <Route path="/menu" element={ <Menu/> }/>
+                            <Route path="/perfil" element={ <Perfil/> }/>
+                            <Route path="/cadUsuario" element={ <CadUsuario/> }/>
+                            <Route path="/CadDocument" element={ <CadDocument/> }/>
+                            <Route path="/EditDocument" element={ <EditDocument/> }/>
+                            <Route path="/CadSetor" element={ <CadSetor/> }/>
+                            <Route path="/EditSetor" element={ <EditSetor/> }/>
+                        </Route>
+                    </Routes>
+            </Router>
+        </>
     )
 }
