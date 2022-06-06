@@ -1,55 +1,95 @@
-import '../stylesInterface/home.css'
+import '../stylesInterface/home.css';
+import React, { useState, useContext, useEffect } from 'react';
+import api from '../services/api';
+
 
 export function Home() {
+
+
+    const [edtTitle, setedtTitle] = useState("");
+    const [edtDocument, setedtDocument] = useState("");
+    const [edtMaterialLink, setMaterialLink] = useState("");
+    const [edtEdtDocumentDContent, setedtEdtDocumentDContent] = useState("");
+    const [edtSectorId, setSectorId] = useState("");
+    const [edtSectorName, setedtSectorName] = useState("");
+    const [edtDescption, setedtDescption] = useState("");
+
+    interface teste {
+        setores: setor[]
+    }
+    interface setor {
+        description: String,
+        document_content: String,
+        document_id: number,
+        material_link: String,
+        sector_id: number,
+        sector_name: String,
+        title: String,
+    }
+  
+    const [Home, setHome] = useState<setor[]>([] as setor[]);
+  
+    const acao = (event: { preventDefault: () => void }) => {
+      event.preventDefault();
+    };
+
+    async function listHome(){
+        const res = await api.get("/api/documents/listAllDocuments");
+        console.log(res.data)
+        setHome(res.data)
+      }
+  
+    useEffect (() => {
+      listHome()
+    }, []);
+  
+    if (!Home.length) return <div>No data</div>;
+
+
+
     return (
         <>
-            <body>
-                <br/><br/><br/>
-                <section className='home'>
-                    <div className='div'>
-                        <h1>Titulo do Setor</h1>
-                        <p>
-                        Aqui vai ser o local aonde vamos retornar todas as informações do setor, para ser mais exato será a descrição do setor.
-                        Aqui vai ser o local aonde vamos retornar todas as informações do setor, para ser mais exato será a descrição do setor.
-                        Aqui vai ser o local aonde vamos retornar todas as informações do setor, para ser mais exato será a descrição do setor.
-                        </p>
-                        <img src="https://images.unsplash.com/photo-1497215842964-222b430dc094?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZW1wcmVzYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500"/>
-                        <div className="divider-2"></div>
-                        <h1>Titulo do Documento</h1>
-                        <p>
-                        Aqui será retornado todo conteúdo que foi cadastrado no documento, sendo assim, 
-                        poderá haver imagens, textos e até mesmo gifs. Esse textarea estará recheado de 
-                        informações sendo necessário que deixemos ilimitado o varchar nele para que não de 
-                        problema caso seja adicionados muitos caracteres..
-                        Aqui será retornado todo conteúdo que foi cadastrado no documento, sendo assim, 
-                        poderá haver imagens, textos e até mesmo gifs. Esse textarea estará recheado de 
-                        informações sendo necessário que deixemos ilimitado o varchar nele para que não de 
-                        problema caso seja adicionados muitos caracteres..
-                        Aqui será retornado todo conteúdo que foi cadastrado no documento, sendo assim, 
-                        poderá haver imagens, textos e até mesmo gifs. Esse textarea estará recheado de 
-                        informações sendo necessário que deixemos ilimitado o varchar nele para que não de 
-                        problema caso seja adicionados muitos caracteres..
-                        </p>
-                        <p>
-                        Aqui será retornado todo conteúdo que foi cadastrado no documento, sendo assim, 
-                        poderá haver imagens, textos e até mesmo gifs. Esse textarea estará recheado de 
-                        informações sendo necessário que deixemos ilimitado o varchar nele para que não de 
-                        problema caso seja adicionados muitos caracteres..
-                        Aqui será retornado todo conteúdo que foi cadastrado no documento, sendo assim, 
-                        poderá haver imagens, textos e até mesmo gifs. Esse textarea estará recheado de 
-                        informações sendo necessário que deixemos ilimitado o varchar nele para que não de 
-                        problema caso seja adicionados muitos caracteres..
-                        Aqui será retornado todo conteúdo que foi cadastrado no documento, sendo assim, 
-                        poderá haver imagens, textos e até mesmo gifs. Esse textarea estará recheado de 
-                        informações sendo necessário que deixemos ilimitado o varchar nele para que não de 
-                        problema caso seja adicionados muitos caracteres..
-                        </p>
-                        <div className='divider'></div>
-                    </div>
-                </section>
-            </body>
+            <br/><br/><br/>
+
+            <section className='home'>
+                <div className='div'>
+                    <h1>Titulo do Setor</h1>
+                    <p>
+                        Descrição do setor
+                    </p>
+                    <div className="divider-2"></div>
+
+                    {Home.map((hom) =>
+                        <div>
+                            <h1>{hom.title}</h1>
+                            <p>
+                                {hom.description}
+                            </p>
+                            <p>
+                                {hom.material_link}
+                            </p>
+                            <div className='divider'></div> 
+                        </div>
+                    )}
+                </div>
+
+                    
+            </section>
+
+            
+            
         </>
     )
 }
 
 export default Home;
+
+{/* <div className="divider-2"></div>
+                        <h1>{hom.title}</h1>
+                        <p>
+                            {hom.description}
+                        </p>
+                        <p>
+                            {hom.material_link}
+                        </p>
+                    <div className='divider'></div> */}

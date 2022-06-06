@@ -40,6 +40,17 @@
     position: fixed;
 }
 
+/*Exemplo*/
+.user-adm-hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.user-adm-shown{
+    opacity: 1;
+    visibility: inherit;
+}
+
 .shown{
     transition: ease-out 0.5s;
     position: fixed;

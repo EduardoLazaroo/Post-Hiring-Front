@@ -55,7 +55,7 @@ section.container input::placeholder{
 }
 
 /* form */
-section.container input.button{
+section.container button.button{
     margin-top: 8px;
     background-color: rgb(8, 24, 113);
     color:white;
@@ -70,16 +70,6 @@ section.container input.button{
     transition: 0.2s;
 }
 
-section.container input.button:hover{
+section.container button.button:hover{
     background-color: rgb(15, 27, 75);
-}
-
-section.container p{
-    color: #cbd0f7;
-}
-
-section.container p a{
-    color: rgb(104, 104, 212);
-    text-decoration: none;
-    margin-left: 5px;
 }

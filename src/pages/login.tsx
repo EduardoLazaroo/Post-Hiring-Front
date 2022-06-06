@@ -1,8 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
-import api from "../services/request.js"
-// import api from "../services/auth.js"
+import api from "../services/api"
 import { useNavigate } from "react-router-dom";
-
 // --------- css ------------
 import loginImg from '../assets/login.png';
 import '../stylesInterface/login.css'
@@ -10,13 +8,26 @@ import '../stylesInterface/login.css'
 
 export function Login() {
     const navigate = useNavigate();
+    const [nickName, setNickName] = useState('');
+    const [password, setpassword] = useState('');
+   
+    async function submit(event: React.FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+        const data = {
+            nickname: nickName,
+            password: password
+        }
 
-    const [usuario, setUsuario] = React.useState("");
-    const [senha, setSenha] = React.useState("");
+        const res = await api.post("/api/login/Auth", {data}); 
 
-    async function authenticateUser() {
-        const res = await api.login(usuario, senha);
-        console.log('res', res)
+        if (res.data.retorno.logged == true){
+            sessionStorage.setItem('isSupervisor', res.data.retorno.is_supervisor);
+            sessionStorage.setItem('user_id', res.data.retorno.user_id); 
+            navigate("/home")  
+        } else{
+            alert("Usuário ou senha inválidos")
+        }
+        
     }
 
     return (
@@ -29,26 +40,26 @@ export function Login() {
                             />
                         </div>
                         {/* ------- form -------- */}
-                        <form>
+                        <form onSubmit={submit}>
                             <input 
                                 type="text" 
                                 placeholder='Insira seu usuario' 
-                                onChange={(event) => setUsuario(event.target.value)}
+                                onChange={(event) => setNickName(event.target.value)}
                             />
                             <input 
                                 type="password" 
                                 name="password" 
                                 placeholder="Insira sua senha" 
-                                onChange={(event) => setSenha(event.target.value)}
+                                onChange={(event) => setpassword(event.target.value)}
                             />
                             <br></br>
                             <button 
-                                type="button" 
+                                type="submit" 
                                 className='button' 
                                 value="Entrar" 
-                                onClick={()=>authenticateUser()}
+                                
                             >Entrar</button>
-                        </form>
+                        </form >
                         {/* ------- form -------- */}
                     </div>
                 </div>
@@ -57,3 +68,4 @@ export function Login() {
     )
 }
 export default Login;
+

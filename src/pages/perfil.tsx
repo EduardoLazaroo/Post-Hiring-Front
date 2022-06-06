@@ -3,7 +3,7 @@ import '../styles/perfil.css'
 export function Perfil() {
     return (
         <>
-            <body className='bodyPerfil'>
+            <div className='divOnePerfil'>
                 <section className='perfil'>
                     <div className="area-perfil">
                         <div className="divPerfil">
@@ -18,7 +18,7 @@ export function Perfil() {
                         </div> 
                     </div>
                 </section> 
-            </body>
+            </div>
         </>
     )
 }

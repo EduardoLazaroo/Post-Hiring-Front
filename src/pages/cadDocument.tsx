@@ -14,39 +14,37 @@ export function CadDocument() {
 
   return (
     <>
-      <body>
-        <section className='cadDocument'>
-          <div className="area-document">
-            <div className="divDocument">
-              <h1>Cadastro Documento</h1>
-              <form onSubmit={cadDocSubmit}>
-                <input 
-                  type="text" 
-                  name='setor' 
-                  id='setor' 
-                  placeholder='Insira o setor' 
-                  onChange={(event) => setdocSetor(event.target.value)} 
-                />
-                <input 
-                  type="text" 
-                  name='material' 
-                  id='material' 
-                  placeholder='Link do Material' 
-                  onChange={(event) => setdocMaterial(event.target.value)} 
-                />
-                <textarea 
-                  name="descricao" 
-                  className='descricao' 
-                  id='descricao' 
-                  placeholder='Insira a descricao' 
-                  onChange={(event) => setdocDescricao(event.target.value)} 
-                />
-                <input type="submit" className='button' value="Cadastrar" />
-              </form>
-            </div>
+      <section className='cadDocument'>
+        <div className="area-document">
+          <div className="divDocument">
+            <h1>Cadastro Documento</h1>
+            <form onSubmit={cadDocSubmit}>
+              <input 
+                type="text" 
+                name='setor' 
+                id='setor' 
+                placeholder='Insira o setor' 
+                onChange={(event) => setdocSetor(event.target.value)} 
+              />
+              <input 
+                type="text" 
+                name='material' 
+                id='material' 
+                placeholder='Link do Material' 
+                onChange={(event) => setdocMaterial(event.target.value)} 
+              />
+              <textarea 
+                name="descricao" 
+                className='descricao' 
+                id='descricao' 
+                placeholder='Insira a descricao' 
+                onChange={(event) => setdocDescricao(event.target.value)} 
+              />
+              <input type="submit" className='button' value="Cadastrar" />
+            </form>
           </div>
-        </section>
-      </body>
+        </div>
+      </section>
     </>
   )
 }
